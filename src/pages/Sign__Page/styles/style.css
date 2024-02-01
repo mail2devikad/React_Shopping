@@ -18,5 +18,5 @@
   }
   
 .absolute-eye {
-    @apply absolute bottom-12 right-6 text-stone-600
+    @apply absolute lg:bottom-12 md:bottom-11 bottom-10 right-6 md:right-10 text-stone-600
   }
