@@ -1,0 +1,32 @@
+.p_login{
+    @apply font-normal lg:text-base text-sm text-center
+ }
+ .login_head{
+     @apply text-xl font-bold text-center pb-3
+ }
+ .align{
+    @apply pt-14
+ }
+ .card{
+     @apply lg:w-[508px] lg:h-[596px]
+      md:w-[450px] md:h-[550px]  
+      w-[370px] h-[520px]  bg-white rounded-md 
+      /* grid grid-rows-2 */
+ }
+ .card1{
+     @apply bg-white lg:w-[380px] lg:h-[445px] 
+     md:w-[320px] h-[410px] lg:mx-16 md:mx-16 mx-14
+      lg:mt-5 mt-2
+ }
+ .background{
+     @apply bg-black h-screen flex justify-center py-6 font-body
+ }
+ .links{
+    @apply text-sm flex justify-between text-blue-800 underline mt-5
+ }
+ .close{
+    @apply lg:pl-[430px] md:pl-[380px] pl-[310px] pt-5
+ }
+ .close-icon{
+    @apply lg:w-[40px] lg:h-[40px] w-[30px] h-[30px] text-gray-600
+ }
