@@ -3,6 +3,7 @@ import Input from "../../components/UI/Input";
 import Button from "../../components/UI/Button";
 import { Link } from "react-router-dom";
 import "../Sign__Page/styles/style.css";
+import { PiEyeClosedBold } from "react-icons/pi";
 
 const Signup = () => {
   const [name, setName] = useState("");
@@ -43,16 +44,17 @@ const Signup = () => {
               setData={setPhone}
             />
           </div>
-          <div>
-            <Input
+          <div className="relative-container">
+            <Input 
               data={password}
               label="Password"
               type="password"
               placeholder="*********"
               setData={setPassword}
             />
+            <PiEyeClosedBold className="absolute-eye"/>
           </div>
-          <div>
+          <div className="relative-container">
             <Input
               data={confirmpass}
               label="Confirm Password"
@@ -60,6 +62,7 @@ const Signup = () => {
               placeholder="*********"
               setData={setConfirmpass}
             />
+            <PiEyeClosedBold className="absolute-eye"/>
           </div>
           <div>
             <Button label="Sign Up" />

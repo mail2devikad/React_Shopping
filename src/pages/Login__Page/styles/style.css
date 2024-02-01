@@ -28,5 +28,5 @@
     @apply lg:pl-[430px] md:pl-[380px] pl-[310px] pt-5
  }
  .close-icon{
-    @apply lg:w-[40px] lg:h-[40px] w-[30px] h-[30px] text-gray-600
+    @apply lg:w-[40px] lg:h-[40px] w-[30px] h-[30px] text-stone-600
  }

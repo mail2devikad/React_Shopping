@@ -9,7 +9,7 @@
 
 }
 .input{
-    @apply bg-[#F4F4F4] text-sm text-[#27272780] rounded-md
+    @apply bg-[#F4F4F4] text-sm rounded-md
     lg:h-[62px] lg:w-[377px] mt-1 mb-6 pl-5
     md:h-[54px] md:w-[300px] 
     h-[48px] w-[250px]

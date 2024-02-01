@@ -13,3 +13,10 @@
 .link{
     @apply text-center pt-5 text-blue-800 hover:text-purple-800 hover:underline
 }
+.relative-container {
+    @apply relative;
+  }
+  
+.absolute-eye {
+    @apply absolute bottom-12 right-6 text-stone-600
+  }

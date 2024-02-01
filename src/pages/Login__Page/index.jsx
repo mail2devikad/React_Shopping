@@ -4,6 +4,7 @@ import Button from "../../components/UI/Button";
 import "../Login__Page/styles/style.css";
 import { Link } from "react-router-dom";
 import { IoCloseCircleOutline } from "react-icons/io5";
+import { PiEyeClosedBold } from "react-icons/pi";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -29,7 +30,7 @@ const Login = () => {
               setData={setUsername}
             />
           </div>
-          <div>
+          <div className="relative-container">
             <Input
               data={password}
               label="Password"
@@ -37,6 +38,7 @@ const Login = () => {
               placeholder="*********"
               setData={setPassword}
             />
+            <PiEyeClosedBold className="absolute-eye"/>
           </div>
           <div>
             <Button label="Login" />
