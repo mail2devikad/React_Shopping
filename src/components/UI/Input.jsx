@@ -12,7 +12,7 @@ const Input = ({ label, type, placeholder, data, setData }) => {
         value={data}
         onChange={(e) => setData(e.target.value)}
       />
-    </div>
+    </div> 
   );
 };
 
