@@ -2,10 +2,10 @@
     @apply font-normal lg:text-base text-sm text-center
  }
  .login_head{
-     @apply text-xl font-bold text-center pb-3
+     @apply text-xl font-bold text-center pb-2
  }
  .align{
-    @apply pt-14
+    @apply pt-12
  }
  .card{
      @apply lg:w-[508px] lg:h-[596px]
@@ -14,19 +14,22 @@
       /* grid grid-rows-2 */
  }
  .card1{
-     @apply bg-white lg:w-[380px] lg:h-[445px] 
-     md:w-[320px] h-[410px] lg:mx-16 md:mx-16 mx-14
+     @apply bg-white lg:w-[380px] lg:h-[450px] 
+     md:w-[320px] h-[420px] lg:mx-16 md:mx-16 mx-14
       lg:mt-5 mt-2
  }
  .background{
      @apply bg-black h-screen flex justify-center py-6 font-body
  }
- .links{
-    @apply text-sm flex justify-between text-blue-800 underline mt-5
+ .link1{
+    @apply text-sm  hover:text-blue-800 hover:underline mb-5 text-[#27272780]
  }
+ .link2{
+   @apply text-sm text-center text-blue-800 underline mt-3
+}
  .close{
     @apply lg:pl-[430px] md:pl-[380px] pl-[310px] pt-5
  }
  .close-icon{
-    @apply lg:w-[40px] lg:h-[40px] w-[30px] h-[30px] text-stone-600
+    @apply lg:w-[40px] lg:h-[40px] w-[30px] h-[30px] text-[#27272780]
  }

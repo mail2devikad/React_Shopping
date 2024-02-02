@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Input from "../../components/UI/Input";
 import Button from "../../components/UI/Button";
 import "../Login__Page/styles/style.css";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { PiEyeClosedBold } from "react-icons/pi";
 
@@ -13,7 +13,7 @@ const Login = () => {
     <div className="background">
       <div className="card">
         <div className="close">
-        <IoCloseCircleOutline className="close-icon"/>
+          <IoCloseCircleOutline className="close-icon" />
         </div>
         <div className="card1">
           <div>
@@ -38,14 +38,22 @@ const Login = () => {
               placeholder="*********"
               setData={setPassword}
             />
-            <PiEyeClosedBold className="absolute-eye"/>
+            <PiEyeClosedBold className="absolute-eye" />
+          </div>
+          <div className="link1">
+            <Link to="/forgotpassword">Forgot Password ?</Link>
           </div>
           <div>
             <Button label="Login" />
           </div>
-          <div className="links">
-            <Link to="/forgotpassword">Forgot Password ?</Link>
+          {/* <div className="link2">
             <Link to="/signup">Sign Up</Link> 
+          </div> */}
+          <div className="text-center mt-2">
+            Not a User ?
+            <Link to="/signup" className="link2">
+              Sign Up
+            </Link>
           </div>
         </div>
       </div>
