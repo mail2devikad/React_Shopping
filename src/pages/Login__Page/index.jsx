@@ -4,11 +4,19 @@ import Button from "../../components/UI/Button";
 import "../Login__Page/styles/style.css";
 import { Link, Navigate } from "react-router-dom";
 import { IoCloseCircleOutline } from "react-icons/io5";
-import { PiEyeClosedBold } from "react-icons/pi";
+import { PiEyeClosedBold, PiEyeBold } from "react-icons/pi";
 
 const Login = () => {
+
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
   return (
     <div className="background">
       <div className="card">
@@ -34,11 +42,15 @@ const Login = () => {
             <Input
               data={password}
               label="Password"
-              type="password"
+              type={showPassword ? "text" : "password"}
               placeholder="*********"
               setData={setPassword}
             />
-            <PiEyeClosedBold className="absolute-eye" />
+            {showPassword ? (
+              <PiEyeBold className="absolute-eye" onClick={togglePasswordVisibility} />
+            ) : (
+              <PiEyeClosedBold className="absolute-eye" onClick={togglePasswordVisibility} />
+            )}
           </div>
           <div className="link1">
             <Link to="/forgotpassword">Forgot Password ?</Link>
@@ -46,9 +58,6 @@ const Login = () => {
           <div>
             <Button label="Login" />
           </div>
-          {/* <div className="link2">
-            <Link to="/signup">Sign Up</Link> 
-          </div> */}
           <div className="text-center mt-2">
             Not a User ?
             <Link to="/signup" className="link2">

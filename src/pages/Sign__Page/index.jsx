@@ -3,14 +3,20 @@ import Input from "../../components/UI/Input";
 import Button from "../../components/UI/Button";
 import { Link } from "react-router-dom";
 import "../Sign__Page/styles/style.css";
-import { PiEyeClosedBold } from "react-icons/pi";
+import { PiEyeClosedBold, PiEyeBold } from "react-icons/pi";
 
 const Signup = () => {
+  
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
   const [confirmpass, setConfirmpass] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
 
   return (
     <div className="back">
@@ -48,21 +54,24 @@ const Signup = () => {
             <Input 
               data={password}
               label="Password"
-              type="password"
+              type={showPassword ? "text" : "password"}
               placeholder="*********"
               setData={setPassword}
             />
-            <PiEyeClosedBold className="absolute-eye"/>
+            {showPassword ? (
+              <PiEyeBold className="absolute-eye" onClick={togglePasswordVisibility} />
+            ) : (
+              <PiEyeClosedBold className="absolute-eye" onClick={togglePasswordVisibility} />
+            )}
           </div>
           <div className="relative-container">
             <Input
               data={confirmpass}
               label="Confirm Password"
-              type="text"
+              type="password"
               placeholder="*********"
               setData={setConfirmpass}
             />
-            <PiEyeClosedBold className="absolute-eye"/>
           </div>
           <div>
             <Button label="Sign Up" />
