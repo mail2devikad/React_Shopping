@@ -21,7 +21,7 @@
      @apply bg-black  flex justify-center py-6 font-body
  }
  .link1{
-    @apply text-sm  hover:text-blue-800 hover:underline mb-5 text-[#27272780]
+    @apply text-sm  hover:text-blue-800 hover:underline mb-5 mt-2 text-[#27272780]
  }
  .link2{
    @apply text-sm text-center text-blue-800 underline mt-3

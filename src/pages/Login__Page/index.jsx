@@ -8,7 +8,6 @@ import { PiEyeClosedBold, PiEyeBold } from "react-icons/pi";
 import Validation from "../../utils/validators/Validation";
 
 const Login = () => {
-
   const [values, setValues] = useState({
     email: "",
     password: "",
@@ -53,10 +52,10 @@ const Login = () => {
               field="email"
               onChange={handleInput}
             />
-            {error.email && <p className="text-red-500 text-xs">{error.email}</p>}
+            {error.email && <p className="error">{error.email}</p>}
           </div>
           <div className="relative-container">
-          <Input
+            <Input
               label="Password"
               type={showPassword ? "text" : "password"}
               placeholder="*********"
@@ -65,18 +64,21 @@ const Login = () => {
               field="password"
               onChange={handleInput}
             />
-            {error.password && <p className="text-red-500 text-xs">{error.password}</p>}
+            {error.password && <p className="error">{error.password}</p>}
             {showPassword ? (
               <PiEyeBold className="absolute-eye" onClick={PasswordVisibile} />
             ) : (
-              <PiEyeClosedBold className="absolute-eye" onClick={PasswordVisibile} />
+              <PiEyeClosedBold
+                className="absolute-eye"
+                onClick={PasswordVisibile}
+              />
             )}
           </div>
           <div className="link1">
             <Link to="/forgotpassword">Forgot Password ?</Link>
           </div>
           <div>
-          <Button label="Login" onClick={handleValidation} />
+            <Button label="Login" onClick={handleValidation} />
           </div>
           <div className="text-center mt-2">
             Not a User ?

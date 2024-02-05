@@ -52,7 +52,7 @@ const Signup = () => {
               field="name"
               onChange={handleInput}
             />
-            {error.name && <p className="text-red-500 text-xs">{error.name}</p>}
+            {error.name && <p className="error">{error.name}</p>}
           </div>
           <div>
             <Input
@@ -65,7 +65,7 @@ const Signup = () => {
               onChange={handleInput}
             />
             {error.email && (
-              <p className="text-red-500 text-xs">{error.email}</p>
+              <p className="error">{error.email}</p>
             )}
           </div>
           <div>
@@ -79,7 +79,7 @@ const Signup = () => {
               onChange={handleInput}
             />
             {error.phone && (
-              <p className="text-red-500 text-xs">{error.phone}</p>
+              <p className="error">{error.phone}</p>
             )}
           </div>
           <div className="relative-container">
@@ -93,7 +93,7 @@ const Signup = () => {
               onChange={handleInput}
             />
             {error.password && (
-              <p className="text-red-500 text-xs">{error.password}</p>
+              <p className="error">{error.password}</p>
             )}
             {showPassword ? (
               <PiEyeBold
@@ -118,7 +118,7 @@ const Signup = () => {
               onChange={handleInput}
             />
             {error.confirmpass && (
-              <p className="text-red-500 text-xs">{error.confirmpass}</p>
+              <p className="error">{error.confirmpass}</p>
             )}
           </div>
           <div>

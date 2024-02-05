@@ -3,9 +3,9 @@ import "../styles/style.css";
 
 const Input = ({ label, type, placeholder, values, setValues, field }) => {
   return (
-    <div>
+    <div className="mt-5">
       <label className="label1">{label}</label>
-      <br />
+      <br/>
       <input
         className="input"
         type={type}
