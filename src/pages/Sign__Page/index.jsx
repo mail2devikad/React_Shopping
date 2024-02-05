@@ -4,17 +4,36 @@ import Button from "../../components/UI/Button";
 import { Link } from "react-router-dom";
 import "../Sign__Page/styles/style.css";
 import { PiEyeClosedBold, PiEyeBold } from "react-icons/pi";
+import Validation from "../../utils/validators/Validation";
 
 const Signup = () => {
-  
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmpass, setConfirmpass] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
-  const togglePasswordVisibility = () => {
+  const [values, setValues] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    password: "",
+    confirmpass: "",
+  });
+
+  const [error, setError] = useState({});
+
+  const handleInput = (e) => {
+    const newValue = { ...values, [e.target.name]: e.target.value };
+    setValues(newValue);
+  };
+
+  const handleValidation = (e) => {
+    e.preventDefault();
+    setError(Validation(values));
+
+    if (Object.keys(error).length === 0) {
+      alert("Validation successful! Logging in...");
+    }
+  };
+
+  const PasswordVisible = () => {
     setShowPassword(!showPassword);
   };
 
@@ -25,56 +44,85 @@ const Signup = () => {
           <div className="heading">Welcome</div>
           <div>
             <Input
-              data={name}
               label="Name"
               type="text"
               placeholder="Enter your name"
-              setData={setName}
+              values={values}
+              setValues={setValues}
+              field="name"
+              onChange={handleInput}
             />
+            {error.name && <p className="text-red-500 text-xs">{error.name}</p>}
           </div>
           <div>
             <Input
-              data={email}
               label="Email Id"
               type="text"
               placeholder="Enter your email-id"
-              setData={setEmail}
+              values={values}
+              setValues={setValues}
+              field="email"
+              onChange={handleInput}
             />
+            {error.email && (
+              <p className="text-red-500 text-xs">{error.email}</p>
+            )}
           </div>
           <div>
             <Input
-              data={phone}
               label="Phone Number"
-              type="text"
+              type="number"
               placeholder="Enter number"
-              setData={setPhone}
+              values={values}
+              setValues={setValues}
+              field="phone"
+              onChange={handleInput}
             />
-          </div>
-          <div className="relative-container">
-            <Input 
-              data={password}
-              label="Password"
-              type={showPassword ? "text" : "password"}
-              placeholder="*********"
-              setData={setPassword}
-            />
-            {showPassword ? (
-              <PiEyeBold className="absolute-eye" onClick={togglePasswordVisibility} />
-            ) : (
-              <PiEyeClosedBold className="absolute-eye" onClick={togglePasswordVisibility} />
+            {error.phone && (
+              <p className="text-red-500 text-xs">{error.phone}</p>
             )}
           </div>
           <div className="relative-container">
             <Input
-              data={confirmpass}
+              label="Password"
+              type={showPassword ? "text" : "password"}
+              placeholder="*********"
+              values={values}
+              setValues={setValues}
+              field="password"
+              onChange={handleInput}
+            />
+            {error.password && (
+              <p className="text-red-500 text-xs">{error.password}</p>
+            )}
+            {showPassword ? (
+              <PiEyeBold
+                className="absolute-eye"
+                onClick={PasswordVisible}
+              />
+            ) : (
+              <PiEyeClosedBold
+                className="absolute-eye"
+                onClick={PasswordVisible}
+              />
+            )}
+          </div>
+          <div className="relative-container">
+            <Input
               label="Confirm Password"
               type="password"
               placeholder="*********"
-              setData={setConfirmpass}
+              values={values}
+              setValues={setValues}
+              field="confirmpass"
+              onChange={handleInput}
             />
+            {error.confirmpass && (
+              <p className="text-red-500 text-xs">{error.confirmpass}</p>
+            )}
           </div>
           <div>
-            <Button label="Sign Up" />
+            <Button label="Sign Up" onClick={handleValidation} />
           </div>
           <div className="link">
             <Link to="/login">Already Registered ?</Link>

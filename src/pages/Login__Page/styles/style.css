@@ -8,17 +8,17 @@
     @apply pt-12
  }
  .card{
-     @apply lg:w-[508px] lg:h-[596px]
-      md:w-[450px] md:h-[550px]  
-      w-[370px] h-[520px]  bg-white rounded-md 
+     @apply lg:w-[508px] 
+      md:w-[450px]   
+      w-[370px]  bg-white rounded-md  
  }
  .card1{
-     @apply bg-white lg:w-[380px] lg:h-[450px] 
-     md:w-[320px] h-[420px] lg:mx-16 md:mx-16 mx-14
+     @apply bg-white lg:w-[380px] 
+     md:w-[320px]  lg:mx-16 md:mx-16 mx-14
       lg:mt-5 mt-2
  }
  .background{
-     @apply bg-black h-screen flex justify-center py-6 font-body
+     @apply bg-black  flex justify-center py-6 font-body
  }
  .link1{
     @apply text-sm  hover:text-blue-800 hover:underline mb-5 text-[#27272780]
