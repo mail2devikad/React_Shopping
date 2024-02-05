@@ -28,9 +28,9 @@ const Signup = () => {
     e.preventDefault();
     setError(Validation(values));
 
-    if (Object.keys(error).length === 0) {
-      alert("Validation successful! Logging in...");
-    }
+    // if (Object.keys(error).length === 0) {
+    //   alert("Validation successful! Logging in...");
+    // }
   };
 
   const PasswordVisible = () => {
