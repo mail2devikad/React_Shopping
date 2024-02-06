@@ -1,5 +1,5 @@
 .back{
-    @apply bg-black  flex justify-center py-10
+    @apply bg-black  flex justify-center py-10 font-body
 }
 .main-box{
     @apply bg-white lg:w-[500px] md:w-[450px] w-[380px] flex justify-center rounded-md

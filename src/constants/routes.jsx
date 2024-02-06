@@ -1,6 +1,7 @@
 const routes = {
     home: () => '/',
     signIn: () => '/login',
-    signUp:()=> '/signup'
+    signUp:()=> '/signup',
+    forgotPassword:()=> '/forgotpassword',
 }
 export default routes

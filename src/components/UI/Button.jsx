@@ -4,7 +4,7 @@ import "../styles/style.css"
 const Button = ({label,onClick}) => {
   return (
     <div>
-      <button className="login_button"
+      <button 
       onClick={onClick}>{label}</button>
     </div>
   )

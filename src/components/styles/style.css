@@ -1,13 +1,6 @@
 .label1{
     @apply lg:text-base text-sm
 }
-.login_button{
-    @apply bg-[#3E56A2] border-[#1B3A9C] text-white rounded-full border-2 text-center
-     lg:h-[70px] lg:w-[380px] lg:font-bold lg:text-2xl
-     md:h-[60px] md:w-[300px] font-semibold text-xl 
-     h-[50px] w-[250px] mt-5
-
-}
 .input{
     @apply  bg-[#F4F4F4] text-sm rounded-md
     lg:h-[62px] lg:w-[377px] mt-1  pl-5

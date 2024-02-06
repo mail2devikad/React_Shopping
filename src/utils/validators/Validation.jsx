@@ -33,5 +33,20 @@ export default function Validation(values) {
     error.phone = "* Invalid Phone Number";
   }
 
+  if (values.confirmpass === "") {
+    error.confirmpass = "* Confirm Password Required";
+  } else if (values.password !== values.confirmpass) {
+    error.confirmpass = "* Passwords do not match";
+  }
+
+  if (values.confirmpassword === "") {
+    error.confirmpassword = "* Confirm Password Required";
+  } else if (values.password !== values.confirmpassword) {
+    error.confirmpassword = "* Passwords do not match";
+  }
+
+  if (values.otp === "") {
+    error.otp = "* Name Required";
+  }
   return error;
 }

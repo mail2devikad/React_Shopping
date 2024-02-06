@@ -27,11 +27,10 @@ const Signup = () => {
   const handleValidation = (e) => {
     e.preventDefault();
     setError(Validation(values));
-
-    // if (Object.keys(error).length === 0) {
-    //   alert("Validation successful! Logging in...");
-    // }
   };
+  // if (Object.keys(error).length === 0) {
+  //   alert("Validation successful! Logging in...");
+  // }
 
   const PasswordVisible = () => {
     setShowPassword(!showPassword);
@@ -42,7 +41,7 @@ const Signup = () => {
       <div className="main-box">
         <div className="box">
           <div className="heading">Welcome</div>
-          <div>
+          <div className="mt-5">
             <Input
               label="Name"
               type="text"
@@ -54,7 +53,7 @@ const Signup = () => {
             />
             {error.name && <p className="error">{error.name}</p>}
           </div>
-          <div>
+          <div className="mt-5">
             <Input
               label="Email Id"
               type="text"
@@ -64,11 +63,9 @@ const Signup = () => {
               field="email"
               onChange={handleInput}
             />
-            {error.email && (
-              <p className="error">{error.email}</p>
-            )}
+            {error.email && <p className="error">{error.email}</p>}
           </div>
-          <div>
+          <div className="mt-5">
             <Input
               label="Phone Number"
               type="number"
@@ -78,11 +75,9 @@ const Signup = () => {
               field="phone"
               onChange={handleInput}
             />
-            {error.phone && (
-              <p className="error">{error.phone}</p>
-            )}
+            {error.phone && <p className="error">{error.phone}</p>}
           </div>
-          <div className="relative-container">
+          <div className="relative-container mt-5">
             <Input
               label="Password"
               type={showPassword ? "text" : "password"}
@@ -92,14 +87,9 @@ const Signup = () => {
               field="password"
               onChange={handleInput}
             />
-            {error.password && (
-              <p className="error">{error.password}</p>
-            )}
+            {error.password && <p className="error">{error.password}</p>}
             {showPassword ? (
-              <PiEyeBold
-                className="absolute-eye"
-                onClick={PasswordVisible}
-              />
+              <PiEyeBold className="absolute-eye" onClick={PasswordVisible} />
             ) : (
               <PiEyeClosedBold
                 className="absolute-eye"
@@ -107,7 +97,7 @@ const Signup = () => {
               />
             )}
           </div>
-          <div className="relative-container">
+          <div className="relative-container mt-5">
             <Input
               label="Confirm Password"
               type="password"
@@ -117,11 +107,12 @@ const Signup = () => {
               field="confirmpass"
               onChange={handleInput}
             />
-            {error.confirmpass && (
-              <p className="error">{error.confirmpass}</p>
-            )}
+            {error.confirmpass && <p className="error">{error.confirmpass}</p>}
           </div>
-          <div>
+          <div
+            className="bg-[#3E56A2] border-[#1B3A9C] text-white rounded-full border-2 text-center lg:font-bold lg:text-2xl
+               font-semibold text-xl mt-5 lg:h-[70px] lg:w-[380px] md:h-[60px] md:w-[300px]  h-[50px] w-[250px] lg:pt-4 md:pt-3 pt-2"
+          >
             <Button label="Sign Up" onClick={handleValidation} />
           </div>
           <div className="link">

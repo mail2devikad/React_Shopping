@@ -42,7 +42,7 @@ const Login = () => {
             <p className="p_login">Where Every Bite Tells a Story, and Every</p>
             <p className="p_login">Moment Feels Like Home!</p>
           </div>
-          <div className="align">
+          <div className="align mt-5">
             <Input
               label="Email ID/Mobile Number"
               type="text"
@@ -54,7 +54,7 @@ const Login = () => {
             />
             {error.email && <p className="error">{error.email}</p>}
           </div>
-          <div className="relative-container">
+          <div className="relative-container mt-5">
             <Input
               label="Password"
               type={showPassword ? "text" : "password"}
@@ -77,7 +77,10 @@ const Login = () => {
           <div className="link1">
             <Link to="/forgotpassword">Forgot Password ?</Link>
           </div>
-          <div>
+          <div
+            className="bg-[#3E56A2] border-[#1B3A9C] text-white rounded-full border-2 text-center lg:font-bold lg:text-2xl
+               font-semibold text-xl mt-5 lg:h-[70px] lg:w-[380px] md:h-[60px] md:w-[300px]  h-[50px] w-[250px] lg:pt-4 md:pt-3 pt-2"
+          >
             <Button label="Login" onClick={handleValidation} />
           </div>
           <div className="text-center mt-2">
