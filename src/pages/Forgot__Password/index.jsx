@@ -24,17 +24,17 @@ const Forgotpassword = () => {
     setError(Validation(values));
   };
   return (
-    <div className="bg-slate-300 flex justify-center py-10 font-body">
-      <div className="bg-white lg:w-[500px] md:w-[450px] w-[380px] flex justify-center rounded-xl">
-        <div className="lg:w-[380px] md:w-[320px] w-[260px] my-10 ">
+    <div className=" password-body">
+      <div className="password-box">
+        <div className="password-card">
           <div>
             <div className="text-xl font-bold text-center pb-2">
               Welcome back !
             </div>
-            <p className="font-normal lg:text-base text-sm text-center">
+            <p className=" paragraph">
               Where Every Bite Tells a Story, and Every
             </p>
-            <p className="font-normal lg:text-base text-sm text-center">
+            <p className=" paragraph">
               Moment Feels Like Home!
             </p>
           </div>

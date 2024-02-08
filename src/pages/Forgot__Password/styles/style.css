@@ -1,1 +1,12 @@
- 
+ .paragraph{
+    @apply font-normal lg:text-base text-sm text-center
+ }
+ .password-body{
+    @apply bg-slate-300 flex justify-center py-10 font-body
+ }
+ .password-box{
+    @apply bg-white lg:w-[500px] md:w-[450px] w-[380px] flex justify-center rounded-xl 
+ }
+ .password-card{
+    @apply lg:w-[380px] md:w-[320px] w-[260px] my-10 
+ }
