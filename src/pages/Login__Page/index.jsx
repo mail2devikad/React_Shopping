@@ -5,14 +5,15 @@ import "../Login__Page/styles/style.css";
 import { Link, useNavigate } from "react-router-dom";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { PiEyeClosedBold, PiEyeBold } from "react-icons/pi";
-import Validation from "../../utils/validators/Validation";
 import routes from "../../constants/routes";
 import useFetch from "../../api/hooks/useFetch";
+import Loginvalidation from "../../utils/validators/Loginvalidation";
+
 
 const Login = () => {
   const navigate = useNavigate();
   const [values, setValues] = useState({
-    email: "",
+    phone: "",
     password: "",
   });
 
@@ -26,10 +27,12 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    const validationErrors = Validation(values);
+    const validationErrors = Loginvalidation(values);
+    
     if (Object.keys(validationErrors).length === 0) {
+      console.log("hvjhf");
       await fetchData({
-        emailormobile: values.email,
+        emailormobile: values.phone,
         password: values.password,
       });
       if (data) {
@@ -59,13 +62,13 @@ const Login = () => {
           <div className="align mt-5">
             <Input
               label="Email ID/Mobile Number"
-              type="text"
-              placeholder="Enter your email-id"
+              type="number"
+              placeholder="Enter your number"
               values={values}
               setValues={setValues}
-              field="email"
+              field="phone"
             />
-            {error.email && <p className="error">{error.email}</p>}
+            {error.phone && <p className="error">{error.phone}</p>}
           </div>
           <div className="relative-container mt-5">
             <Input
