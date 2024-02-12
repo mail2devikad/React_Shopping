@@ -15,10 +15,15 @@ const Signup = () => {
 
   const [values, setValues] = useState({
     name: "",
+    nameExist: true,
     email: "",
+    emailExist: true,
     phone: "",
+    phoneExist: true,
     password: "",
-    confirmpass: "",
+    passwordExist: true,
+    confirmpassword: "",
+    confirmpasswordExist: true,
   });
 
   const [error, setError] = useState({});
@@ -34,15 +39,17 @@ const Signup = () => {
 
     if (Object.keys(validationErrors).length === 0) {
       setLoading(true);
-      await fetchData({
+      const newresult = await fetchData({
         name: values.name,
         email: values.email,
         password: values.password,
         phone: values.phone,
       });
       setLoading(false);
-      if (data) {
+      if (newresult?.sts != "00") {
         navigate(routes.signIn());
+      } else {
+        alert(newresult?.msg);
       }
     } else {
       setError(validationErrors);
@@ -117,14 +124,13 @@ const Signup = () => {
               placeholder="*********"
               values={values}
               setValues={setValues}
-              field="confirmpass"
+              field="confirmpassword"
             />
-            {error.confirmpass && <p className="error">{error.confirmpass}</p>}
+            {error.confirmpassword && (
+              <p className="error">{error.confirmpassword}</p>
+            )}
           </div>
-          <div
-            className="bg-[#3E56A2] border-[#1B3A9C] text-white rounded-full border-2 text-center lg:font-bold lg:text-2xl
-               font-semibold text-xl mt-5 lg:h-[70px] lg:w-[380px] md:h-[60px] md:w-[300px]  h-[50px] w-[250px] lg:pt-4 md:pt-3 pt-2"
-          >
+          <div className="signup-button">
             <Button label="Sign Up" onClick={handleSignup} disabled={loading} />
           </div>
           {loading && (

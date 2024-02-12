@@ -10,3 +10,11 @@
  .password-card{
     @apply lg:w-[380px] md:w-[320px] w-[260px] my-10 
  }
+ .get-otp{
+   @apply bg-[#3E56A2] border-[#1B3A9C] text-white rounded-md border-2 text-center
+   mt-3 lg:ml-[300px] md:ml-[220px] ml-[170px] lg:h-[40px] lg:w-[80px] h-[40px] w-[80px]  pt-2 lg:text-base text-sm
+ }
+ .reset-pass{
+   @apply bg-[#3E56A2] border-[#1B3A9C] text-white rounded-full border-2 text-center 
+   mt-5 lg:h-[50px] lg:w-[380px] md:h-[40px] md:w-[300px]  h-[40px] w-[250px] lg:pt-4 md:pt-2 pt-2
+ }

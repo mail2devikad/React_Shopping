@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 
 function useFetch({ url }) {
-  const [data, setData] = useState();
   const [error, setError] = useState();
   
-console.log(url);
 
   const fetchData = async (body) => {
     try {
@@ -17,12 +15,16 @@ console.log(url);
           // 'Content-Type': 'application/x-www-form-urlencoded',
         },
       });
-      setData(result);
+      
+      const newresult=await result.json();
+  
+      return newresult;
+
     } catch (error) {
       setError(error);
     }
   };
-  return {data,fetchData,error}
+  return {fetchData,error}
 }
 
 export default useFetch;

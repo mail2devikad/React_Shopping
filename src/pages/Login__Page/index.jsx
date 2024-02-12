@@ -20,10 +20,9 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState({});
   const {
-    data,
     fetchData,
     error: fetcherror,
-  } = useFetch({ url: "https://portal.umall.in/api/customer/login" });
+  } = useFetch({ url: "https://portal.umall.in/api/customer/login"});
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -31,13 +30,15 @@ const Login = () => {
 
     if (Object.keys(validationErrors).length === 0) {
       setLoading(true);
-      await fetchData({
+      const newresult= await fetchData({
         emailormobile: values.phone,
         password: values.password,
       });
       setLoading(false);
-      if (data) {
+      if (newresult?.sts !="00") {
         navigate(routes.dashboard());
+      }else{
+        alert(newresult?.msg)
       }
     } else {
       setError(validationErrors);

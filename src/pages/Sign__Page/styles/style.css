@@ -24,3 +24,9 @@
 .error{
     @apply text-red-500 text-xs
   }
+
+  .signup-button{
+    @apply bg-[#3E56A2] border-[#1B3A9C] text-white rounded-full border-2 text-center 
+    lg:font-bold lg:text-2xl font-semibold text-xl mt-5 lg:h-[70px] lg:w-[380px] md:h-[60px] md:w-[300px]
+      h-[50px] w-[250px] lg:pt-4 md:pt-3 pt-2
+  }
