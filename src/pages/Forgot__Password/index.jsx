@@ -63,11 +63,9 @@ const Forgotpassword = () => {
     e.preventDefault();
     const validationErrors = Validation(newValue);
     if (Object.keys(validationErrors).length === 0) {
-      // setLoading(true);
       const newresult = await fetchData({
         number: newValue.phone,
       });
-      // setLoading(false);
       if (newresult?.sts == "01") {
         alert(`Use this otp ${newresult?.otp} to reset password`);
       } else {
