@@ -16,15 +16,15 @@ const Contact = () => {
             <h2 className="text-5xl font-semibold mt-10">Contact us</h2>
             <div className="flex mt-14">
               <div >
-                <p className="text-blue-800 text-xl font-semibold">Visit us</p>
+                <p className="text-[#3E56A2] text-xl font-semibold">Visit us</p>
                 <p className="mt-3">
                   2972 Westheimer Rd.
                   <br /> Santa Ana, Illinois
                   <br /> 85486
                 </p>
               </div>
-              <div className=" ml-20">
-                <p className=" text-xl font-semibold">Contact</p>
+              <div className="lg:ml-20 md:ml-10 ml-5">
+                <p className="text-[#3E56A2] text-xl font-semibold">Contact</p>
                 <p className="mt-3">contact@company.com</p>
                 <p>(406)555-0120</p>
               </div>
